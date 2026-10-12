@@ -61,7 +61,7 @@ em { color: var(--pink); font-weight: 500; }
 .menu-toggle { display: none; border: 0; color: inherit; background: none; }
 
 .hero { position: relative; display: flex; min-height: 100svh; align-items: center; padding: clamp(104px, 12vh, 132px) 0 clamp(42px, 7vh, 74px); overflow: hidden; }
-.hero-grid { position: relative; z-index: 1; display: grid; width: 100%; grid-template-columns: minmax(0, 1fr) minmax(360px, 430px); align-items: center; column-gap: clamp(48px, 7vw, 108px); }
+.hero-grid { position: relative; z-index: 1; display: grid; width: min(calc(100% - 48px), var(--container)); margin-inline: auto; grid-template-columns: minmax(0, 1fr) minmax(360px, 430px); align-items: center; column-gap: clamp(48px, 7vw, 108px); }
 .hero-copy { grid-column: 1; align-self: center; max-width: 640px; padding-top: 0; }
 .hero-copy h1 { max-width: 640px; margin-bottom: 30px; line-height: 1.03; }
 .hero-lead { max-width: 460px; margin-bottom: 0; color: rgba(255, 250, 252, .68); font-size: 1.05rem; line-height: 1.65; }
@@ -266,7 +266,7 @@ html:not(.js) .faq-answer { height: auto; opacity: 1; }
 
 @media (max-width: 1000px) {
   .container { width: min(calc(100% - 38px), var(--container)); }
-  .hero-grid { column-gap: 5%; }
+  .hero-grid { width: min(calc(100% - 38px), var(--container)); column-gap: 5%; }
   .hero-frame { height: min(480px, 56svh); }
   .split-grid, .faq-grid { gap: 5%; }
   .gallery-grid-five { grid-template-columns: repeat(4, 1fr); }
@@ -304,7 +304,7 @@ html:not(.js) .faq-answer { height: auto; opacity: 1; }
   .site-header.is-stuck .site-nav a:not(.nav-cta) { border-bottom-color: var(--line); }
   .nav-cta { text-align: center; }
   .hero { min-height: 100svh; align-items: stretch; padding: 88px 0 24px; }
-  .hero-grid { display: flex; height: 100%; min-height: 0; flex-direction: column; align-items: stretch; justify-content: flex-start; gap: 17px; }
+  .hero-grid { display: flex; width: min(calc(100% - 32px), var(--container)); height: 100%; min-height: 0; flex-direction: column; align-items: stretch; justify-content: flex-start; gap: 17px; }
   .hero-copy { max-width: none; padding-top: 0; margin-bottom: 0; text-align: center; }
   .hero-copy .eyebrow { margin-bottom: 14px; }
   h1 { max-width: none; margin-bottom: 14px; font-size: clamp(2.45rem, 10.8vw, 4.4rem); }
