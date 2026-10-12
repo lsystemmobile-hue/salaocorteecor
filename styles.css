@@ -61,7 +61,7 @@ em { color: var(--pink); font-weight: 500; }
 .menu-toggle { display: none; border: 0; color: inherit; background: none; }
 
 .hero { position: relative; display: flex; min-height: 100svh; align-items: center; padding: clamp(128px, 17vh, 164px) 0 clamp(48px, 8vh, 80px); overflow: hidden; }
-.hero-grid { position: relative; z-index: 1; display: grid; width: 100%; grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr); grid-template-rows: auto auto; align-items: start; column-gap: 8%; row-gap: clamp(18px, 3vh, 28px); }
+.hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr); grid-template-rows: auto auto; align-items: start; column-gap: 8%; row-gap: clamp(18px, 3vh, 28px); }
 .hero-copy { grid-column: 1; grid-row: 1; align-self: center; padding-top: clamp(42px, 8vh, 78px); }
 .hero-copy h1 { line-height: 1.03; }
 .hero-lead { max-width: 490px; margin-bottom: 34px; color: rgba(255, 250, 252, .68); font-size: 1.08rem; line-height: 1.7; }
@@ -193,19 +193,22 @@ em { color: var(--pink); font-weight: 500; }
 .contact-panel { border-top: 1px solid var(--line); }
 .contact-block { display: grid; grid-template-columns: 145px 1fr; gap: 25px; padding: 22px 0; border-bottom: 1px solid var(--line); }
 .contact-label { color: var(--pink); font-size: .68rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
-.contact-block a { width: fit-content; color: var(--ink); font-size: .93rem; text-decoration: none; }
+.contact-block a { width: auto; color: var(--ink); font-size: .93rem; text-decoration: none; }
 .contact-block a:hover { color: var(--pink); }
-.hours-list { display: grid; width: 100%; gap: 8px; margin: 0; font-size: .84rem; }
-.hours-list div { display: flex; justify-content: space-between; gap: 20px; }
+.hours-list { display: grid; width: 100%; gap: 0; margin: 0; border: 1px solid var(--line); font-size: .84rem; }
+.hours-list div { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; min-width: 0; padding: 11px 14px; }
+.hours-list div + div { border-top: 1px solid var(--line); }
 .hours-list dt { color: var(--ink-soft); }
-.hours-list dd { margin: 0; font-weight: 600; }
+.hours-list dd { margin: 0; font-weight: 600; text-align: right; }
 
 .faq { padding: 145px 0; }
 .faq-grid { display: grid; grid-template-columns: 1fr; gap: 0; align-items: start; }
 .faq-content { width: 100%; max-width: none; }
 .faq-content details { border-top: 1px solid var(--line); }
 .faq-content details:last-child { border-bottom: 1px solid var(--line); }
-.faq-content summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 21px 0; cursor: pointer; list-style: none; font-size: .95rem; font-weight: 600; }
+.faq-content summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 21px 0; color: var(--ink); background: transparent; cursor: pointer; list-style: none; font-size: .95rem; font-weight: 600; -webkit-tap-highlight-color: transparent; }
+.faq-content summary:focus { outline: none; }
+.faq-content summary:focus-visible { outline: 3px solid #f6c7dd; outline-offset: 4px; }
 .faq-content summary::-webkit-details-marker { display: none; }
 .faq-content summary::after { color: var(--pink); content: '+'; font-size: 1.5rem; font-weight: 400; transition: transform .25s ease; }
 .faq-content details[open] summary::after { transform: rotate(45deg); }
@@ -277,10 +280,10 @@ html:not(.js) .faq-answer { height: auto; opacity: 1; }
 
 @media (max-width: 900px) and (min-width: 761px) {
   .hero { padding: 112px 0 52px; }
-  .hero-grid { display: flex; flex-direction: column; gap: 32px; text-align: center; }
-  .hero-copy { max-width: 680px; text-align: center; }
+  .hero-grid { display: flex; flex-direction: column; gap: 32px; text-align: left; }
+  .hero-copy { max-width: 680px; text-align: left; }
   .hero-copy .eyebrow { margin-bottom: 14px; }
-  .hero-lead { margin-inline: auto; }
+  .hero-lead { margin-inline: 0; }
   .hero-visual { width: min(100%, 430px); margin-inline: auto; }
   .hero-frame { height: min(430px, 48svh); }
   .hero-actions { width: 100%; align-items: center; }
