@@ -112,9 +112,10 @@ em { color: var(--pink); font-weight: 500; }
 .intro-copy .text-link { margin-top: 22px; }
 
 .services { padding: 135px 0 145px; }
-.section-heading { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 70px; }
+.section-heading { display: block; margin-bottom: 70px; }
+.section-heading > div { max-width: 760px; }
 .section-heading h2 { margin-bottom: 0; }
-.section-intro { max-width: 330px; margin-bottom: 7px; color: var(--ink-soft); font-size: .95rem; }
+.section-intro { max-width: 560px; margin: 24px 0 0; color: var(--ink-soft); font-size: .95rem; }
 .service-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .service-card { position: relative; min-height: 190px; padding: 30px 32px; display: grid; grid-template-columns: 44px minmax(0, 1fr); column-gap: 20px; row-gap: 10px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); transition: background .3s ease, transform .3s ease; }
 .service-card:hover { z-index: 1; background: #fff; box-shadow: var(--shadow); transform: translateY(-2px); }
