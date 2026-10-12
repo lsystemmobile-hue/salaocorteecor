@@ -65,17 +65,14 @@
       }).filter(function (group) { return group?.images?.[0]; })
     : [];
 
-  if (heroDeck && heroCards.length === 5 && heroServices.length === 5) {
-    let cardOrder = heroCards.slice();
+  if (heroDeck && heroCards.length === 1 && heroServices.length === 5) {
+    let heroIndex = 2;
     let heroDelay = null;
     let heroTween = null;
     let heroPaused = false;
     let heroAnimating = false;
     const heroRotationDelay = 1500;
-    const compactHeroMotion = window.matchMedia("(max-width: 760px)").matches;
-    const heroFan = compactHeroMotion
-      ? { x: [-32, -16, 0, 16, 32], rotation: [-10, -5, 0, 5, 10], scale: [.94, .97, 1, .97, .94], opacity: [.66, .86, 1, .86, .66], zIndex: [1, 2, 5, 3, 1] }
-      : { x: [-50, -25, 0, 25, 50], rotation: [-16, -8, 0, 8, 16], scale: [.93, .97, 1, .97, .93], opacity: [.66, .86, 1, .86, .66], zIndex: [1, 2, 5, 3, 1] };
+    const heroCard = heroCards[0];
 
     const preloadHeroImages = function () {
       heroServices.forEach(function (group) {
@@ -85,44 +82,19 @@
     };
 
     const updateHeroAccessibility = function () {
-      cardOrder.forEach(function (card, index) {
-        card.setAttribute("aria-hidden", String(index !== 2));
-        card.classList.toggle("is-center", index === 2);
-      });
-      const centerCard = cardOrder[2];
-      heroDeck.setAttribute("aria-label", `Destaque de ${centerCard.alt.replace(" no Salão Corte E Cor", "")}`);
+      heroCard.setAttribute("aria-hidden", "false");
+      heroCard.classList.add("is-center");
+      heroDeck.setAttribute("aria-label", `Destaque de ${heroCard.alt.replace(" no Salão Corte E Cor", "")}`);
     };
 
-    const setHeroContent = function () {
-      heroCards.forEach(function (card, index) {
-        const group = heroServices[index];
-        const image = group.images[0];
-        card.src = image.src;
-        card.alt = image.alt;
-        card.loading = "eager";
-        card.decoding = "async";
-        if (index === 2) card.setAttribute("fetchpriority", "high");
-        else card.removeAttribute("fetchpriority");
-      });
+    const setHeroContent = function (index) {
+      const image = heroServices[index].images[0];
+      heroCard.src = image.src;
+      heroCard.alt = image.alt;
+      heroCard.loading = "eager";
+      heroCard.decoding = "async";
+      heroCard.setAttribute("fetchpriority", "high");
       preloadHeroImages();
-      updateHeroAccessibility();
-    };
-
-    const setFanPosition = function (card, position, immediate) {
-      if (!window.gsap) return;
-      const properties = {
-        x: heroFan.x[position],
-        rotation: heroFan.rotation[position],
-        scale: heroFan.scale[position],
-        autoAlpha: heroFan.opacity[position],
-        zIndex: heroFan.zIndex[position]
-      };
-      if (immediate) gsap.set(card, properties);
-      else gsap.to(card, { ...properties, duration: .7, ease: "power3.inOut", overwrite: "auto" });
-    };
-
-    const setFanInstant = function () {
-      cardOrder.forEach(function (card, index) { setFanPosition(card, index, true); });
       updateHeroAccessibility();
     };
 
@@ -139,19 +111,19 @@
     const rotateHero = function () {
       if (heroPaused || heroAnimating || document.hidden || !window.gsap) return;
       heroAnimating = true;
-      cardOrder = [cardOrder[1], cardOrder[2], cardOrder[3], cardOrder[4], cardOrder[0]];
-      updateHeroAccessibility();
+      heroIndex = (heroIndex + 1) % heroServices.length;
       heroTween = gsap.timeline({
-        defaults: { duration: .7, ease: "power3.inOut", overwrite: "auto" },
+        defaults: { overwrite: "auto" },
         onComplete: function () {
           heroAnimating = false;
           heroTween = null;
           scheduleHeroRotation();
         }
       });
-      cardOrder.forEach(function (card, index) {
-        heroTween.to(card, { x: heroFan.x[index], rotation: heroFan.rotation[index], scale: heroFan.scale[index], autoAlpha: heroFan.opacity[index], zIndex: heroFan.zIndex[index] }, 0);
-      });
+      heroTween
+        .to(heroCard, { autoAlpha: 0, y: 10, scale: .985, duration: .28, ease: "power2.in" })
+        .call(function () { setHeroContent(heroIndex); })
+        .fromTo(heroCard, { y: -10, scale: 1.015 }, { autoAlpha: 1, y: 0, scale: 1, duration: .48, ease: "power3.out" });
     };
 
     const pauseHeroRotation = function () {
@@ -166,9 +138,9 @@
       else scheduleHeroRotation();
     };
 
-    setHeroContent();
+    setHeroContent(heroIndex);
     if (!reduceMotion && window.gsap) {
-      setFanInstant();
+      gsap.set(heroCard, { autoAlpha: 1, y: 0, scale: 1 });
       heroDeck.addEventListener("mouseenter", pauseHeroRotation);
       heroDeck.addEventListener("mouseleave", resumeHeroRotation);
       heroDeck.addEventListener("focusin", pauseHeroRotation);
