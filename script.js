@@ -65,14 +65,18 @@
       }).filter(function (group) { return group?.images?.[0]; })
     : [];
 
-  if (heroDeck && heroCards.length === 1 && heroServices.length === 5) {
-    let heroIndex = 2;
+  if (heroDeck && heroCards.length === 5 && heroServices.length === 5) {
+    let cardOrder = heroCards.slice();
+    let nextHeroIndex = 0;
     let heroDelay = null;
     let heroTween = null;
     let heroPaused = false;
     let heroAnimating = false;
     const heroRotationDelay = 1500;
-    const heroCard = heroCards[0];
+    const compactHeroMotion = window.matchMedia("(max-width: 760px)").matches;
+    const heroFan = compactHeroMotion
+      ? { x: [-32, -16, 0, 16, 32], rotation: [-10, -5, 0, 5, 10], scale: [.93, .97, 1, .97, .93], opacity: [.66, .86, 1, .86, .66], zIndex: [1, 2, 5, 3, 1] }
+      : { x: [-50, -25, 0, 25, 50], rotation: [-16, -8, 0, 8, 16], scale: [.93, .97, 1, .97, .93], opacity: [.66, .86, 1, .86, .66], zIndex: [1, 2, 5, 3, 1] };
 
     const preloadHeroImages = function () {
       heroServices.forEach(function (group) {
@@ -82,19 +86,37 @@
     };
 
     const updateHeroAccessibility = function () {
-      heroCard.setAttribute("aria-hidden", "false");
-      heroCard.classList.add("is-center");
-      heroDeck.setAttribute("aria-label", `Destaque de ${heroCard.alt.replace(" no Salão Corte E Cor", "")}`);
+      cardOrder.forEach(function (card, position) {
+        card.setAttribute("aria-hidden", String(position !== 1));
+        card.classList.toggle("is-center", position === 1);
+      });
+      heroDeck.setAttribute("aria-label", `Destaque de ${cardOrder[2].alt.replace(" no Salão Corte E Cor", "")}`);
     };
 
-    const setHeroContent = function (index) {
+    const setHeroContent = function (card, index) {
       const image = heroServices[index].images[0];
-      heroCard.src = image.src;
-      heroCard.alt = image.alt;
-      heroCard.loading = "eager";
-      heroCard.decoding = "async";
-      heroCard.setAttribute("fetchpriority", "high");
-      preloadHeroImages();
+      card.src = image.src;
+      card.alt = image.alt;
+      card.loading = "eager";
+      card.decoding = "async";
+      if (card === cardOrder[2]) card.setAttribute("fetchpriority", "high");
+      else card.removeAttribute("fetchpriority");
+    };
+
+    const setFanPosition = function (card, position, immediate) {
+      const properties = {
+        x: heroFan.x[position],
+        rotation: heroFan.rotation[position],
+        scale: heroFan.scale[position],
+        autoAlpha: heroFan.opacity[position],
+        zIndex: heroFan.zIndex[position]
+      };
+      if (immediate) gsap.set(card, properties);
+      else gsap.to(card, { ...properties, duration: .5, ease: "back.out(1.4)", overwrite: "auto" });
+    };
+
+    const setFanInstant = function () {
+      cardOrder.forEach(function (card, position) { setFanPosition(card, position, true); });
       updateHeroAccessibility();
     };
 
@@ -111,19 +133,32 @@
     const rotateHero = function () {
       if (heroPaused || heroAnimating || document.hidden || !window.gsap) return;
       heroAnimating = true;
-      heroIndex = (heroIndex + 1) % heroServices.length;
+      const incomingIndex = nextHeroIndex;
+      nextHeroIndex = (nextHeroIndex + 1) % heroServices.length;
       heroTween = gsap.timeline({
         defaults: { overwrite: "auto" },
         onComplete: function () {
+          const oldLeftCard = cardOrder[0];
+          cardOrder = cardOrder.slice(1).concat(oldLeftCard);
+          setHeroContent(oldLeftCard, incomingIndex);
+          setFanInstant();
           heroAnimating = false;
           heroTween = null;
           scheduleHeroRotation();
         }
       });
-      heroTween
-        .to(heroCard, { autoAlpha: 0, y: 10, scale: .985, duration: .28, ease: "power2.in" })
-        .call(function () { setHeroContent(heroIndex); })
-        .fromTo(heroCard, { y: -10, scale: 1.015 }, { autoAlpha: 1, y: 0, scale: 1, duration: .48, ease: "power3.out" });
+      cardOrder.forEach(function (card, position) {
+        const nextPosition = position === 0 ? heroFan.x.length - 1 : position - 1;
+        heroTween.to(card, {
+          x: heroFan.x[nextPosition],
+          rotation: heroFan.rotation[nextPosition],
+          scale: heroFan.scale[nextPosition],
+          autoAlpha: heroFan.opacity[nextPosition],
+          zIndex: heroFan.zIndex[nextPosition],
+          duration: .5,
+          ease: "back.out(1.4)"
+        }, 0);
+      });
     };
 
     const pauseHeroRotation = function () {
@@ -138,9 +173,9 @@
       else scheduleHeroRotation();
     };
 
-    setHeroContent(heroIndex);
+    cardOrder.forEach(function (card, index) { setHeroContent(card, index); });
     if (!reduceMotion && window.gsap) {
-      gsap.set(heroCard, { autoAlpha: 1, y: 0, scale: 1 });
+      setFanInstant();
       heroDeck.addEventListener("mouseenter", pauseHeroRotation);
       heroDeck.addEventListener("mouseleave", resumeHeroRotation);
       heroDeck.addEventListener("focusin", pauseHeroRotation);
@@ -153,7 +188,8 @@
       });
       scheduleHeroRotation();
     } else {
-      updateHeroAccessibility();
+      if (window.gsap) setFanInstant();
+      else updateHeroAccessibility();
     }
   }
 

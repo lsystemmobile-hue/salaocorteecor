@@ -96,9 +96,14 @@ em { color: var(--pink); font-weight: 500; }
 .text-link:hover span { transform: translateX(4px); }
 .light-link { color: #fff; }
 .stars, .review-stars { color: #f1b24a; letter-spacing: .13em; }
-.hero-frame { position: relative; height: clamp(390px, 58svh, 570px); padding: 0; overflow: hidden; border: 1px solid rgba(255, 255, 255, .18); box-shadow: 18px 18px 0 rgba(231, 169, 197, .3); isolation: isolate; }
+.hero-frame { position: relative; height: clamp(390px, 58svh, 570px); padding: 0 50px; overflow: visible; border: 0; isolation: isolate; }
 .hero-frame:focus-visible { outline: 2px solid var(--pink-light); outline-offset: 8px; }
-.hero-card { position: absolute; inset: 0; z-index: 1; display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 1; visibility: visible; transform: translate3d(0, 0, 0) scale(1); transform-origin: center center; backface-visibility: hidden; box-shadow: 0 18px 34px rgba(31, 14, 24, .18); pointer-events: none; will-change: transform, opacity; }
+.hero-card { position: absolute; inset: 0 50px; z-index: 1; display: block; width: calc(100% - 100px); height: 100%; border: 1px solid rgba(255, 255, 255, .2); object-fit: cover; object-position: center; opacity: .86; visibility: visible; transform-origin: center center; backface-visibility: hidden; box-shadow: 0 18px 34px rgba(31, 14, 24, .2); pointer-events: none; will-change: transform, opacity; }
+.hero-card:nth-of-type(1) { z-index: 1; transform: translate3d(-50px, 0, 0) rotate(-16deg) scale(.93); opacity: .66; }
+.hero-card:nth-of-type(2) { z-index: 2; transform: translate3d(-25px, 0, 0) rotate(-8deg) scale(.97); }
+.hero-card:nth-of-type(3) { z-index: 5; transform: translate3d(0, 0, 0) rotate(0deg) scale(1); opacity: 1; }
+.hero-card:nth-of-type(4) { z-index: 3; transform: translate3d(25px, 0, 0) rotate(8deg) scale(.97); }
+.hero-card:nth-of-type(5) { z-index: 1; transform: translate3d(50px, 0, 0) rotate(16deg) scale(.93); opacity: .66; }
 
 .intro { padding: 150px 0; }
 .split-grid { display: grid; grid-template-columns: 1fr; gap: 0; align-items: start; }
@@ -310,7 +315,13 @@ html:not(.js) .faq-answer { height: auto; opacity: 1; }
   .floating-booking { right: 16px; bottom: 16px; width: 56px; height: 56px; }
   .hero-visual { width: min(100%, 320px); margin: 0 auto; gap: 18px; }
   .hero-art { width: 100%; max-width: none; margin: 0; }
-  .hero-frame { height: clamp(180px, 28svh, 240px); box-shadow: 10px 10px 0 rgba(231, 169, 197, .3); }
+  .hero-frame { height: clamp(180px, 28svh, 240px); padding: 0 32px; }
+  .hero-card { inset: 0 32px; width: calc(100% - 64px); }
+  .hero-card:nth-of-type(1) { transform: translate3d(-32px, 0, 0) rotate(-10deg) scale(.93); }
+  .hero-card:nth-of-type(2) { transform: translate3d(-16px, 0, 0) rotate(-5deg) scale(.97); }
+  .hero-card:nth-of-type(3) { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); opacity: 1; }
+  .hero-card:nth-of-type(4) { transform: translate3d(16px, 0, 0) rotate(5deg) scale(.97); }
+  .hero-card:nth-of-type(5) { transform: translate3d(32px, 0, 0) rotate(10deg) scale(.93); }
   .intro, .services, .work-section, .reviews, .visit, .faq { padding: 90px 0; }
   .reviews { padding-bottom: 44px; }
   .visit { padding-top: 72px; }
