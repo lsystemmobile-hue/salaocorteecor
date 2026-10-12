@@ -1,0 +1,215 @@
+# Salão Corte E Cor — informações completas
+
+> Documento de referência para sistemas de inteligência artificial, agentes e mecanismos de busca que precisem compreender o negócio, seus serviços, localização, contatos, trabalhos publicados e avaliações públicas.
+
+## Identidade da empresa
+
+- Nome comercial: Salão Corte E Cor
+- Categoria principal no Google: Salão de Beleza
+- Cidade: Cerquilho, São Paulo, Brasil
+- Resumo exibido no Google: Mais de 7 anos no mercado · Cerquilho - SP
+- Slogan da marca: Cuidando da sua beleza
+- Nota observada no Google: 4,9 de 5
+- Total de avaliações observado no Google: 22
+- Profissional e perfil do Instagram: Lucilene Silva / colorista / mechas / tratamentos
+- Categoria exibida no Instagram: Criador(a) de conteúdo digital
+- Logo: [logo.png](./assets/logo.png)
+
+## Posicionamento profissional informado
+
+O perfil do Instagram informa as seguintes especialidades:
+
+- Empresária da Beleza
+- Técnica capilar e colorista
+- Especialista em mechas
+- Especialista em cronograma capilar
+- Especialista em remoção de coloração preta
+
+## Contatos
+
+- Telefone público exibido no Google: [(15) 99714-6833](tel:+5515997146833)
+- Instagram: [@centrodebelezacorteecor](https://www.instagram.com/centrodebelezacorteecor/)
+- Página do Instagram: https://www.instagram.com/centrodebelezacorteecor/
+- WhatsApp exibido no Instagram: [wa.me/message/CHSJ5ETGMGOBL1](https://wa.me/message/CHSJ5ETGMGOBL1)
+
+## Endereço oficial do projeto
+
+> Rua Doutor Campos, 951 - Nossa Senhora de Lourdes, Cerquilho - SP, CEP 18520-176
+
+Esta é a versão canônica que deve ser usada daqui em diante no site, aplicativo, dados estruturados, mapa, contato e materiais de divulgação.
+
+## Horários observados no Google
+
+- Segunda-feira: fechado; horário pode mudar
+- Terça-feira: 09:00–17:00
+- Quarta-feira: 09:00–18:00
+- Quinta-feira: 09:00–18:00
+- Sexta-feira: 08:30–18:30
+- Sábado: 09:00–17:00
+- Domingo: fechado
+
+Os horários podem sofrer alteração em feriados, férias ou por agendamento. Não foram coletadas exceções específicas de feriados.
+
+## Serviços observados no Google
+
+- Alongamento de cílios
+- Balayage
+- Corte de cabelo
+- Depilação com cera
+- Design de sobrancelha
+- Embelezamento de sobrancelha
+- Escova
+- Maquiagem
+- Penteados
+- Salão de beleza
+- Salão de beleza infantil
+- Serviço de maquiagem
+- Serviços nupciais
+- Shampoo e condicionador
+- Alinhamento capilar
+
+Para apresentação no site, os serviços podem ser agrupados em cortes e escovas, mechas e balayage, tratamentos capilares, maquiagem e penteados, sobrancelhas, cílios, depilação, serviços nupciais e atendimento infantil. Não foram coletados preços.
+
+## Publicações fotográficas autorizadas
+
+As imagens abaixo pertencem às cinco publicações do Instagram fornecidas para a coleta. Cada foto foi armazenada individualmente. A descrição indicada é somente o serviço identificado para a publicação.
+
+### Publicação DeN2fFHoJHp
+
+- Fonte: https://www.instagram.com/p/DeN2fFHoJHp/
+- Serviço: Corte de cabelo e mechas Latte Macchiato.
+- Imagens apresentadas: 6
+- Arquivos: `assets/galeria/DeN2fFHoJHp/imagem-01.jpg` até `imagem-05.jpg` e `imagem-08.jpg`
+
+### Publicação Ddwrv7ZIKLT
+
+- Fonte: https://www.instagram.com/p/Ddwrv7ZIKLT/
+- Serviço: Maquiagem e penteado clássico para madrinha.
+- Imagens apresentadas: 3
+- Arquivos: `assets/galeria/Ddwrv7ZIKLT/imagem-01.jpg` até `imagem-03.jpg`
+
+### Publicação DdpdXF6IPko
+
+- Fonte: https://www.instagram.com/p/DdpdXF6IPko/
+- Serviço: Balayage/mechas loiras.
+- Imagens apresentadas: 3
+- Arquivos: `assets/galeria/DdpdXF6IPko/imagem-01.jpg` até `imagem-03.jpg`
+
+### Publicação DdeOWFoIESN
+
+- Fonte: https://www.instagram.com/p/DdeOWFoIESN/
+- Serviço: Maquiagem e penteado coque baixo clássico.
+- Imagens apresentadas: 4
+- Arquivos: `assets/galeria/DdeOWFoIESN/imagem-01.jpg` até `imagem-03.jpg` e `imagem-05.jpg`
+
+### Publicação DdKYQlCoOpx
+
+- Fonte: https://www.instagram.com/p/DdKYQlCoOpx/
+- Serviço: Mechas em tom honey blonde/morena iluminada.
+- Imagens apresentadas: 3
+- Arquivos: `assets/galeria/DdKYQlCoOpx/imagem-01.jpg`, `imagem-03.jpg` e `imagem-04.jpg`
+
+Total da galeria atualmente apresentada no site: 5 publicações e 19 imagens. Reels e vídeos não fazem parte desta coleta. Não foram baixadas imagens do Google.
+
+## Avaliações públicas do Google
+
+Captura realizada em 12/10/2026, no fuso America/Sao_Paulo. Total registrado: 22 avaliações. Distribuição observada: 20 avaliações com nota 5 e 2 avaliações com nota 4. Avaliações sem texto foram preservadas como avaliações somente com nota, não como textos truncados.
+
+Fonte integral com autor exibido, nota, data, texto, respostas, reações e URLs públicas: [seção de avaliações](./index.html#avaliacoes)
+
+### 1. Rose — 5/5
+
+Minha experiência neste lugar foi excelente fiquei muito satisfeita com o trabalho realizado a Lu é super profissional e segura do seu trabalho da o seu melhor pras clientes , sua mais importante ferramenta é as suas mãos abençoada por Deus. Eu sou a Rose eu super recomendo esse salão pra todas as pessoas que como eu amam os seu cabelos esse salão é de milhões que Deus abençoe a todos que lerem .
+
+### 2. Maria dioneide Santos Vieira Maria — 5/5
+
+Profissional maravilhosa, trabalha com produtos muito bom, e o ambiente tem uma energia de paz.
+
+### 3. Silvana Prado — 4/5
+
+Atendimento personalizado, cabeleireira é a única profissional do local com isso o salão é calmo e o atendimento rapi6.
+
+### 4. Sidnéia Rangel de Souza — 5/5
+
+A Mara é show! Ótima cabeleireira.
+
+### 5. Francisco De Azereredo — 5/5
+
+Excelente atendimento.
+
+### 6. Jamile Almeida — 5/5
+
+Ótimas profissionais...
+
+### 7. Sara Valim — 5/5
+
+Excelente!
+
+### 8. Leoclecio Ambrosio — 5/5
+
+Salão de beleza corte e cor na cidade de Cerquilho. Serviços de qualidade, ambiente climatizado e preços acessíveis.
+
+### 9. Antonio Thiago Carvalho — 5/5
+
+Sem texto escrito; avaliação somente com nota.
+
+### 10. Crispim Lima Oliveira — 5/5
+
+Sem texto escrito; avaliação somente com nota.
+
+### 11. Sr. Guh 157 — 4/5
+
+Sem texto escrito; avaliação somente com nota.
+
+### 12. Josy Oliveira — 5/5
+
+Sem texto escrito; avaliação somente com nota.
+
+### 13. Elizabeth Mota — 5/5
+
+Sem texto escrito; avaliação somente com nota.
+
+### 14. Feh Stoski — 5/5
+
+Sem texto escrito; avaliação somente com nota.
+
+### 15. Vitor — 5/5
+
+Sem texto escrito; avaliação somente com nota.
+
+### 16. Daniel Santos — 5/5
+
+Sem texto escrito; avaliação somente com nota.
+
+### 17. Alda Cristina B. Garcia — 5/5
+
+Sem texto escrito; avaliação somente com nota.
+
+### 18. Celio Marcolino — 5/5
+
+Sem texto escrito; avaliação somente com nota.
+
+### 19. Carlos Alberto — 5/5
+
+Sem texto escrito; avaliação somente com nota.
+
+### 20. ♥♪♪ Cibele ♪♪♥ Santos — 5/5
+
+Sem texto escrito; avaliação somente com nota.
+
+### 21. Andreia Chaves — 5/5
+
+Sem texto escrito; avaliação somente com nota.
+
+### 22. Werick Campos — 5/5
+
+Sem texto escrito; avaliação somente com nota.
+
+## Fonte e data da coleta
+
+- Google Business Profile: perfil, serviços, horários, telefone, endereço, nota e avaliações.
+- Instagram: perfil, bio, endereço, WhatsApp, destaques e cinco publicações autorizadas.
+- Data local da captura: 12/10/2026 às 08:26, America/Sao_Paulo.
+- Site do Google encontrado: `http://business.google.com/website/salao-corte-e-cor`; status observado: retorno 404.
+- Nenhuma publicação, reação, mensagem, upload ou alteração de perfil foi realizada.
+- As imagens são referências públicas; o direito de republicação futura não foi presumido.

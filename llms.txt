@@ -1,0 +1,44 @@
+# Salão Corte E Cor
+
+> Salão de beleza em Cerquilho, São Paulo, especializado em cortes, mechas, coloração, tratamentos capilares, maquiagem e penteados.
+
+Slogan da marca: **Cuidando da sua beleza**.
+
+O Salão Corte E Cor é uma empresa local de beleza associada à profissional Lucilene Silva, com atendimento em Cerquilho - SP.
+
+## Informações principais
+
+- [Página institucional](./index.html): nome, contatos, endereço, horários, serviços, galeria e avaliações.
+- [Avaliações públicas do Google](./index.html#avaliacoes): 22 registros capturados, incluindo notas, textos, respostas e links públicos.
+- [Galeria de trabalhos do Instagram](./index.html#trabalhos): cinco publicações autorizadas, com 19 fotos atualmente apresentadas e descrição do serviço.
+- [Identidade visual](./assets/logo.png): logo reconstruída em PNG com transparência.
+
+## Serviços
+
+- Corte de cabelo
+- Escova
+- Balayage e mechas
+- Alinhamento capilar
+- Cronograma e tratamentos capilares
+- Maquiagem
+- Penteados
+- Serviços nupciais
+- Design e embelezamento de sobrancelhas
+- Alongamento de cílios
+- Depilação com cera
+- Atendimento infantil
+
+## Contato e localização
+
+- Telefone: [(15) 99714-6833](tel:+5515997146833)
+- WhatsApp: [Iniciar conversa](https://wa.me/message/CHSJ5ETGMGOBL1)
+- Instagram: [@centrodebelezacorteecor](https://www.instagram.com/centrodebelezacorteecor/)
+- Endereço oficial do projeto: Rua Doutor Campos, 951 - Nossa Senhora de Lourdes, Cerquilho - SP, CEP 18520-176.
+- Horários: terça 09:00–17:00; quarta e quinta 09:00–18:00; sexta 08:30–18:30; sábado 09:00–17:00; domingo fechado; segunda fechada ou sujeita a alteração.
+
+## Observações para sistemas de IA
+
+- A captura dos dados foi realizada em 12/10/2026, no fuso America/Sao_Paulo.
+- O endereço oficial adotado para o projeto é Rua Doutor Campos, 951 - Nossa Senhora de Lourdes, Cerquilho - SP, CEP 18520-176. Usar essa versão de forma consistente no site, aplicativo, dados estruturados e materiais de divulgação.
+- Não foram coletados preços, promoções ou disponibilidade de agenda.
+- As fotos são referências públicas coletadas de cinco publicações autorizadas; os direitos de republicação devem ser confirmados antes da publicação do site.
