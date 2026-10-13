@@ -132,23 +132,24 @@
   stroke-width: 1.7;
 }
 
-.link-icon-star,
-.link-icon-pix {
+.link-icon-star {
   display: inline-flex;
-  width: 27px;
-  height: 27px;
+  width: 30px;
+  height: 30px;
   align-items: center;
   justify-content: center;
   color: var(--biosite-pink);
-  font-size: 1.2rem;
+  font-size: 1.45rem;
   line-height: 1;
 }
 
 .link-icon-pix {
-  border: 1px solid currentColor;
-  border-radius: 8px;
-  font-size: 1.55rem;
-  font-weight: 700;
+  display: inline-block;
+  width: 29px;
+  height: 29px;
+  color: var(--biosite-pink);
+  fill: currentColor;
+  stroke: none;
 }
 
 .link-copy {
