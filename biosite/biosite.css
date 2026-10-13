@@ -1,0 +1,365 @@
+.biosite-page {
+  --biosite-pink: #c30d70;
+  --biosite-pink-light: #f4bfd8;
+  --biosite-ink: #231b20;
+  min-height: 100svh;
+  color: #fff;
+  background:
+    radial-gradient(circle at 10% 8%, rgba(195, 13, 112, .32), transparent 30%),
+    radial-gradient(circle at 90% 92%, rgba(231, 169, 197, .18), transparent 26%),
+    var(--biosite-ink);
+}
+
+.biosite-shell {
+  display: flex;
+  min-height: 100svh;
+  justify-content: center;
+  padding: 30px 16px 24px;
+}
+
+.biosite-card {
+  width: min(100%, 560px);
+  padding: clamp(26px, 6vw, 50px) clamp(4px, 2vw, 14px) 22px;
+}
+
+.biosite-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.biosite-logo-wrap {
+  width: min(236px, 62vw);
+  margin-bottom: 28px;
+  filter: drop-shadow(0 16px 24px rgba(0, 0, 0, .24));
+}
+
+.biosite-logo-wrap img {
+  width: 100%;
+  height: auto;
+}
+
+.biosite-page .eyebrow {
+  margin-bottom: 12px;
+  color: var(--biosite-pink-light);
+  font-size: .67rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.biosite-page h1 {
+  margin-bottom: 12px;
+  color: #fff;
+  font-size: clamp(2.4rem, 9vw, 4.3rem);
+  line-height: .98;
+}
+
+.biosite-page h1 em {
+  color: var(--biosite-pink-light);
+}
+
+.biosite-lead {
+  max-width: 340px;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, .72);
+  font-size: .88rem;
+}
+
+.biosite-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 34px;
+  color: rgba(255, 255, 255, .5);
+  font-size: .72rem;
+  letter-spacing: .04em;
+}
+
+.biosite-location span {
+  color: var(--biosite-pink-light);
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.biosite-links {
+  display: grid;
+  gap: 12px;
+}
+
+.biosite-link {
+  display: grid;
+  min-height: 76px;
+  grid-template-columns: 34px minmax(0, 1fr) 22px;
+  align-items: center;
+  gap: 14px;
+  padding: 15px 18px;
+  color: var(--biosite-ink);
+  background: #fffafc;
+  border: 1px solid rgba(255, 255, 255, .42);
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .14);
+  text-align: left;
+  text-decoration: none;
+  transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
+}
+
+.biosite-link:hover {
+  background: #fff;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, .22);
+  transform: translateY(-3px);
+}
+
+.biosite-link:focus-visible {
+  outline: 3px solid var(--biosite-pink-light);
+  outline-offset: 4px;
+}
+
+.biosite-link-button {
+  width: 100%;
+  font: inherit;
+  cursor: pointer;
+}
+
+.link-icon {
+  width: 25px;
+  height: 25px;
+  color: var(--biosite-pink);
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
+
+.link-icon-star,
+.link-icon-pix {
+  display: inline-flex;
+  width: 27px;
+  height: 27px;
+  align-items: center;
+  justify-content: center;
+  color: var(--biosite-pink);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.link-icon-pix {
+  border: 1px solid currentColor;
+  border-radius: 8px;
+  font-size: 1.55rem;
+  font-weight: 700;
+}
+
+.link-copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.link-copy strong {
+  font-size: .88rem;
+  line-height: 1.2;
+}
+
+.link-copy small {
+  overflow: hidden;
+  color: #776b72;
+  font-size: .69rem;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.link-arrow {
+  color: var(--biosite-pink);
+  font-size: 1.15rem;
+  text-align: right;
+}
+
+.biosite-footer {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 28px;
+  color: rgba(255, 255, 255, .45);
+  font-size: .64rem;
+  text-align: center;
+}
+
+.pix-dialog {
+  width: min(calc(100% - 28px), 410px);
+  padding: 0;
+  overflow: visible;
+  color: var(--biosite-ink);
+  background: #fffafc;
+  border: 0;
+  border-radius: 22px;
+  box-shadow: 0 24px 90px rgba(0, 0, 0, .42);
+}
+
+.pix-dialog::backdrop {
+  background: rgba(20, 13, 17, .72);
+  backdrop-filter: blur(8px);
+}
+
+.pix-dialog-inner {
+  position: relative;
+  padding: 34px 24px 24px;
+  text-align: center;
+}
+
+.pix-dialog .eyebrow {
+  margin-bottom: 10px;
+  color: var(--biosite-pink);
+}
+
+.pix-dialog h2 {
+  margin-bottom: 10px;
+  font-size: clamp(2rem, 8vw, 3rem);
+}
+
+.pix-intro {
+  margin-bottom: 20px;
+  color: #71656b;
+  font-size: .78rem;
+}
+
+.pix-close {
+  position: absolute;
+  top: 11px;
+  right: 13px;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--biosite-ink);
+  background: transparent;
+  border: 1px solid rgba(35, 27, 32, .16);
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.pix-close:hover {
+  color: #fff;
+  background: var(--biosite-pink);
+  border-color: var(--biosite-pink);
+}
+
+.pix-qr-frame {
+  width: min(100%, 250px);
+  margin: 0 auto 20px;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid #eadde3;
+  border-radius: 14px;
+}
+
+.pix-qr-frame img {
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+.pix-key-block {
+  padding-top: 17px;
+  border-top: 1px solid #eadde3;
+  text-align: left;
+}
+
+.pix-key-label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--biosite-pink);
+  font-size: .66rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.pix-key-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pix-key-row code {
+  overflow-wrap: anywhere;
+  color: var(--biosite-ink);
+  font-family: var(--sans);
+  font-size: .82rem;
+  font-weight: 700;
+}
+
+.copy-button {
+  flex: 0 0 auto;
+  padding: 9px 12px;
+  color: #fff;
+  background: var(--biosite-pink);
+  border: 1px solid var(--biosite-pink);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: .68rem;
+  font-weight: 700;
+  transition: background .2s ease, transform .2s ease;
+}
+
+.copy-button:hover {
+  background: #9d0d5a;
+  transform: translateY(-1px);
+}
+
+.copy-button:focus-visible,
+.pix-close:focus-visible {
+  outline: 3px solid #f1afd0;
+  outline-offset: 3px;
+}
+
+.copy-status {
+  min-height: 18px;
+  margin: 8px 0 0;
+  color: #23804a;
+  font-size: .68rem;
+}
+
+@media (max-width: 420px) {
+  .biosite-shell {
+    padding-inline: 12px;
+  }
+
+  .biosite-card {
+    padding-inline: 0;
+  }
+
+  .biosite-link {
+    grid-template-columns: 30px minmax(0, 1fr) 18px;
+    gap: 11px;
+    padding-inline: 14px;
+  }
+
+  .pix-dialog-inner {
+    padding-inline: 19px;
+  }
+
+  .pix-key-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .copy-button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .biosite-link,
+  .copy-button {
+    transition: none;
+  }
+}
