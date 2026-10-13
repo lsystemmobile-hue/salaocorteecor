@@ -81,4 +81,95 @@
       setStatus(copied ? "Chave Pix copiada." : "Não foi possível copiar. Toque e segure para copiar.", !copied);
     });
   }
+
+  const bookingDialog = document.querySelector("#booking-dialog");
+  const bookingForm = document.querySelector("#booking-form");
+  const bookingServices = document.querySelector("#booking-services");
+  const bookingPreview = document.querySelector("#booking-preview");
+  const bookingOpenButton = document.querySelector("[data-booking-open]");
+  const bookingCloseButton = document.querySelector("[data-booking-close]");
+  const serviceNames = [
+    "Cortes de cabelo",
+    "Mechas e balayage",
+    "Coloração",
+    "Tratamentos capilares",
+    "Maquiagem e penteados",
+    "Sobrancelhas e cílios"
+  ];
+
+  if (bookingDialog && bookingForm && bookingServices && bookingPreview && bookingOpenButton && bookingCloseButton) {
+    serviceNames.forEach(function (serviceName, index) {
+      const id = `biosite-booking-service-${index + 1}`;
+      const label = document.createElement("label");
+      label.className = "booking-option";
+      label.setAttribute("for", id);
+
+      const input = document.createElement("input");
+      input.id = id;
+      input.type = "checkbox";
+      input.name = "service";
+      input.value = serviceName;
+
+      const mark = document.createElement("span");
+      mark.className = "booking-option-mark";
+      mark.setAttribute("aria-hidden", "true");
+
+      const text = document.createElement("span");
+      text.textContent = serviceName;
+
+      label.append(input, mark, text);
+      bookingServices.appendChild(label);
+    });
+
+    const selectedServices = function () {
+      return Array.from(bookingServices.querySelectorAll("input:checked")).map(function (input) {
+        return input.value;
+      });
+    };
+
+    const updateBookingPreview = function () {
+      const selected = selectedServices();
+      bookingPreview.textContent = selected.length
+        ? `Selecionado${selected.length > 1 ? "s" : ""}: ${selected.join(", ")}.`
+        : "Selecione pelo menos um serviço para continuar.";
+    };
+
+    const closeBooking = function () {
+      if (typeof bookingDialog.close === "function" && bookingDialog.open) bookingDialog.close();
+      else bookingDialog.removeAttribute("open");
+      bookingOpenButton.focus();
+    };
+
+    bookingOpenButton.addEventListener("click", function () {
+      bookingServices.querySelectorAll("input").forEach(function (input) {
+        input.checked = false;
+      });
+      updateBookingPreview();
+      if (typeof bookingDialog.showModal === "function") bookingDialog.showModal();
+      else bookingDialog.setAttribute("open", "");
+      bookingServices.querySelector("input")?.focus();
+    });
+
+    bookingCloseButton.addEventListener("click", closeBooking);
+    bookingDialog.addEventListener("click", function (event) {
+      if (event.target === bookingDialog) closeBooking();
+    });
+    bookingDialog.addEventListener("close", function () {
+      bookingOpenButton.focus();
+    });
+    bookingServices.addEventListener("change", updateBookingPreview);
+    bookingForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const selected = selectedServices();
+      if (!selected.length) {
+        updateBookingPreview();
+        bookingServices.querySelector("input")?.focus();
+        return;
+      }
+
+      const message = `Olá, gostaria de agendar um horário para ${selected.join(", ")}. Poderia confirmar os horários disponíveis?`;
+      closeBooking();
+      window.open(`https://wa.me/5515997146833?text=${encodeURIComponent(message)}`, "_blank", "noopener");
+    });
+  }
 })();

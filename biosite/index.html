@@ -38,11 +38,11 @@
             <span class="link-copy"><strong>Acompanhe no Instagram</strong><small>@centrodebelezacorteecor</small></span>
             <span class="link-arrow" aria-hidden="true">↗</span>
           </a>
-          <a class="biosite-link" href="https://wa.me/message/CHSJ5ETGMGOBL1?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20hor%C3%A1rio.%20Poderia%20confirmar%20os%20hor%C3%A1rios%20dispon%C3%ADveis%3F" target="_blank" rel="noopener">
+          <button class="biosite-link biosite-link-button" type="button" data-booking-open aria-haspopup="dialog">
             <svg class="link-icon whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.4 11.6a8.4 8.4 0 0 1-12.3 7.5L4 20l1-4a8.4 8.4 0 1 1 15.4-4.4Z"></path><path d="M9 8.2c.3-.3.7-.2.9.1l1.1 1.7c.2.3.1.6-.1.8l-.6.5c.5 1 1.2 1.7 2.3 2.2l.5-.6c.2-.3.6-.3.9-.1l1.7 1c.3.2.4.6.1.9l-.5.6c-.4.5-1 .7-1.6.5-2.5-.8-4.4-2.7-5.3-5.2-.2-.6 0-1.2.4-1.6Z"></path></svg>
             <span class="link-copy"><strong>Agende pelo WhatsApp</strong><small>Consulte horários disponíveis</small></span>
             <span class="link-arrow" aria-hidden="true">↗</span>
-          </a>
+          </button>
           <button class="biosite-link biosite-link-button" type="button" data-pix-open aria-haspopup="dialog">
             <span class="link-icon link-icon-pix" aria-hidden="true">⌁</span>
             <span class="link-copy"><strong>Pague via Pix</strong><small>Abra o QR Code para pagar</small></span>
@@ -75,6 +75,22 @@
           </div>
           <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
         </div>
+      </div>
+    </dialog>
+
+    <dialog class="booking-dialog" id="booking-dialog" aria-labelledby="booking-title">
+      <div class="booking-dialog-inner">
+        <button class="dialog-close booking-close" type="button" data-booking-close aria-label="Fechar agendamento">×</button>
+        <p class="eyebrow">Agendamento</p>
+        <h2 id="booking-title">Qual serviço você deseja agendar?</h2>
+        <p class="booking-intro">Selecione uma ou mais opções. O WhatsApp será aberto com uma mensagem pronta para o salão.</p>
+        <form id="booking-form">
+          <fieldset class="booking-options" id="booking-services">
+            <legend class="sr-only">Serviços para agendamento</legend>
+          </fieldset>
+          <p class="booking-preview" id="booking-preview" aria-live="polite">Selecione pelo menos um serviço para continuar.</p>
+          <div class="booking-actions"><button class="button button-primary" type="submit"><svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.4 11.6a8.4 8.4 0 0 1-12.3 7.5L4 20l1-4a8.4 8.4 0 1 1 15.4-4.4Z"></path><path d="M9 8.2c.3-.3.7-.2.9.1l1.1 1.7c.2.3.1.6-.1.8l-.6.5c.5 1 1.2 1.7 2.3 2.2l.5-.6c.2-.3.6-.3.9-.1l1.7 1c.3.2.4.6.1.9l-.5.6c-.4.5-1 .7-1.6.5-2.5-.8-4.4-2.7-5.3-5.2-.2-.6 0-1.2.4-1.6Z"></path></svg>Continuar no WhatsApp <span aria-hidden="true">↗</span></button></div>
+        </form>
       </div>
     </dialog>
 
